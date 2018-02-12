@@ -1,13 +1,19 @@
 <template>
   <div id="app">
     <img src="./assets/logo.png">
+    <button @click="goBack">Back</button>
     <router-view/>
   </div>
 </template>
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  methods: {
+    goBack: function () {
+      window.history.length > 1 ? this.$router.go(-1) : this.$router.push('/')
+    }
+  }
 }
 </script>
 
