@@ -1,6 +1,15 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h2>My test navigation</h2>
+    <ul>
+      <li>
+        <router-link to='/test01'>Test01 raw</router-link> |
+        <router-link to='/test02'>Test02</router-link> |
+        <router-link to='/test02/userid/123'>Test02 with param</router-link> |
+        <router-link :to="{ name: 'Test01', params: { userid: 123 }}">Test01</router-link>
+      </li>
+    </ul>
     <h2>Essential Links</h2>
     <ul>
       <li>
@@ -122,7 +131,7 @@ ul {
   padding: 0;
 }
 li {
-  //display: inline-block;
+  display: inline-block;
   margin: 0 10px;
 }
 a {
