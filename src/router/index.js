@@ -12,8 +12,8 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    { path: '/', name: 'home', component: Home },
-    { path: '/home', name: 'home', component: Home },
+    { path: '/', redirect: '/home' },
+    { path: '/home', name: 'home', component: Home, alias: ['/default', '/', '/xxx'] },
     { path: '/Test01', name: 'Test01', component: Test01 },
     { path: '/Test01/userid/:uid', name: 'test01-with-uid', component: Test01 },
     { path: '/test02', component: Test02 },
