@@ -8,6 +8,8 @@
         <router-link to='/test02'>Test02</router-link> |
         <router-link to='/test02/userid/123'>Test02 with param</router-link> |
         <router-link :to="{ name: 'Test01', params: { userid: 123 }}">Test01</router-link>
+        <a @click="goTest01">Go test01 using push</a> |
+        <a @click="goTest02">Go test02 using push</a> |
       </li>
     </ul>
     <div>
@@ -36,6 +38,14 @@ export default {
         {uid: 3, firstname: 'John', lastname: 'Porter'}
       ],
       input_val: ''
+    }
+  },
+  methods: {
+    goTest01: function () {
+      this.$router.push({name: 'Test01'})
+    },
+    goTest02: function () {
+      this.$router.push({name: 'Test02', params: {uid: 123}})
     }
   }
 }
