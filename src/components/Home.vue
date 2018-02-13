@@ -11,7 +11,8 @@
         <a @click="goTest01">Go test01 using push</a> |
         <a @click="goTest02">Go test02 using push</a> |
         <router-link to='/t03/123/three-one'>Test03 with child 1</router-link>
-        <router-link to='/t03/123/three-two'>Test03 with child 2</router-link>
+        <router-link to='/t03/123/three-two'>Test03 with child 2</router-link> |
+        <router-link to='/test04/uid/12345'>Test04</router-link>
       </li>
     </ul>
     <div>

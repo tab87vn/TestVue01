@@ -7,11 +7,12 @@ import Test03 from '@/components/Test03'
 import Test030 from '@/components/Test03.0'
 import Test031 from '@/components/Test03.1'
 import Test032 from '@/components/Test03.2'
+import Test04 from '@/components/Test04'
 
 Vue.use(Router)
 
 export default new Router({
-  routes: [
+  routes: [ 
     { path: '/', redirect: '/home' },
     { path: '/home', name: 'home', component: Home, alias: ['/default', '/', '/xxx'] },
     { path: '/Test01', name: 'Test01', component: Test01 },
@@ -28,6 +29,7 @@ export default new Router({
         {path: 'three-one', component: Test031},
         {path: 'three-two', component: Test032}
       ]
-    }
+    },
+    { path: '/test04/uid/:uid', component: Test04, props: true}
   ]
 })
