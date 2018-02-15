@@ -1,21 +1,23 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>My test navigation</h2>
-    <ul>
-      <li>
-        <router-link to='/test01'>Test01 raw</router-link> |
-        <router-link to='/test02'>Test02</router-link> |
-        <router-link to='/test02/userid/123'>Test02 with param</router-link> |
-        <router-link :to="{ name: 'test01-with-uid', params: { uid: 123 }}">Test01x</router-link> |
-        <a @click="goTest01">Go test01 using push</a> |
-        <a @click="goTest02">Go test02 using push</a> |
-        <router-link to='/t03/123/three-one'>Test03 with child 1</router-link>
-        <router-link to='/t03/123/three-two'>Test03 with child 2</router-link> |
-        <router-link to='/test04/uid/12345'>Test04</router-link>
-      </li>
-    </ul>
-    <div>
+    <div id="nav">
+      <h2>My test navigation</h2>
+      <ul>
+        <li>
+          <router-link to='/test01'>Test01 raw</router-link> |
+          <router-link to='/test02'>Test02</router-link> |
+          <router-link to='/test02/userid/123'>Test02 with param</router-link> |
+          <router-link :to="{ name: 'test01-with-uid', params: { uid: 123 }}">Test01x</router-link> |
+          <a @click="goTest01">Go test01 using push</a> |
+          <a @click="goTest02">Go test02 using push</a> |
+          <router-link to='/t03/123/three-one'>Test03 with child 1</router-link>
+          <router-link to='/t03/123/three-two'>Test03 with child 2</router-link> |
+          <router-link to='/test04/uid/12345'>Test04</router-link>
+        </li>
+      </ul>
+    </div>
+    <div id="sample-users">
       <ul>
         <li v-for="(user, uid) in users" v-bind:key="uid" >
           {{user.firstname}} {{user.lastname}}
@@ -61,8 +63,7 @@ h1, h2 {
   color: #0000FF;
 }
 ul {
-  list-style-type: none;
-  padding: 0;
+  padding: 10;
 }
 li {
   display: inline-block;
@@ -70,5 +71,21 @@ li {
 }
 a {
   color: #42b983;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+#nav {
+  text-align: center;
+}
+
+#sample-users ul {
+  padding: 0;
+}
+#sample-users li {
+  display: list-item;
+  list-style:circle;
+  font-weight: bold;
+  margin-left: 45%;
 }
 </style>

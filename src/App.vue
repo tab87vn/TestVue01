@@ -1,8 +1,10 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <a href="/home"><img src="./assets/logo.png"></a>
     <button @click="goBack">Back</button>
-    <router-view/>
+    <div id="content-pane">
+      <router-view/>
+    </div>
   </div>
 </template>
 
@@ -27,4 +29,15 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+
+#content-pane {
+  text-align: left;
+  margin-left: 3px;
+}
+
+h1 {
+  text-align: center;
+  color: blueviolet;
+}
+
 </style>
