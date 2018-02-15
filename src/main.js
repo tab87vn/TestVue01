@@ -6,7 +6,7 @@ import router from './router'
 import GlobalComponent from '@/components/GlobalComponent'
 
 Vue.config.productionTip = false
-Vue.Component('global-comp', GlobalComponent)
+Vue.component('global-comp', GlobalComponent)
 
 /* eslint-disable no-new */
 new Vue({

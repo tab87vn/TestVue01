@@ -14,6 +14,9 @@
     <div>
       Pops every five: {{ everyFivePop }}
     </div>
+    <div>
+      <global-comp></global-comp>
+    </div>
   </div>
 </template>
 
