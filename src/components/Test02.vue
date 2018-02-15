@@ -1,16 +1,19 @@
 <template>
+  <div>
+    <h1>{{ header }}t</h1>
     <div>
-        <h1>{{ header }}t</h1>
-    <div>
-        {{ body }}
-        <p>
-          {{ $route.params.uid }}
-        </p>
+      {{ body }}
+      <p>
+        {{ $route.params.uid }}
+      </p>
+        <div>
+        The child says: {{ childContent }}
+      </div>
     </div>
     <div>
-      <global-comp :propertyOne=Number($route.params.uid) :propertyTwo=this.sampleArray :propertyThree=this.person></global-comp>
+      <global-comp @ploup='theChildSay' :propertyOne=Number($route.params.uid) :propertyTwo=this.sampleArray :propertyThree=this.person></global-comp>
     </div>
-    </div>
+  </div>
 </template>
 
 <script>
@@ -29,7 +32,13 @@ export default {
         firstName: 'Cristiano',
         lastName: 'Ronaldo',
         age: 32
-      }
+      },
+      childContent: ''
+    }
+  },
+  methods: {
+    theChildSay: function (content) {
+      this.childContent = content
     }
   }
 }

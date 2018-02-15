@@ -1,6 +1,6 @@
 <template>
-    <div>
-        <h1>{{ header }}t</h1>
+  <div>
+    <h1>{{ header }}t</h1>
     <div>
         {{ body }}
     </div>
@@ -17,7 +17,11 @@
         <li v-if="this.propertyThree">Property 3: Hello, {{ this.propertyThree.firstName }} {{ this.propertyThree.lastName }} ({{ this.propertyThree.age}})</li>
       </ul>
     </div>
+    <div>
+      <input type="text" v-model="content" />
+      <button @click="sendBackToParent">Click</button>
     </div>
+  </div>
 </template>
 
 <script>
@@ -34,7 +38,13 @@ export default {
   data () {
     return {
       header: 'Global Component',
-      body: 'This component is registered globally'
+      body: 'This component is registered globally',
+      content: ''
+    }
+  },
+  methods: {
+    sendBackToParent: function () {
+      this.$emit('ploup', this.content)
     }
   }
 }
