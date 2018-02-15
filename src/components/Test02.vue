@@ -7,6 +7,9 @@
           {{ $route.params.uid }}
         </p>
     </div>
+    <div>
+      <global-comp :propertyOne=Number($route.params.uid) :propertyTwo=this.sampleArray :propertyThree=this.person></global-comp>
+    </div>
     </div>
 </template>
 
@@ -16,7 +19,17 @@ export default {
   data () {
     return {
       header: 'Test02',
-      body: 'This is test02 content'
+      body: 'This is test02 content',
+      sampleArray: [
+        'one',
+        'two',
+        'three'
+      ],
+      person: {
+        firstName: 'Cristiano',
+        lastName: 'Ronaldo',
+        age: 32
+      }
     }
   }
 }
